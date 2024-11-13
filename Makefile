@@ -1,11 +1,14 @@
+СС=g++
+CFLAGS=-Wall -Wextra -O2 -g
+
 all: dirs program
 
 dirs:
 	mkdir -p build
 
 program:
-	gcc -Wall -Wextra -O2 -g server.c -o build/server
-	gcc -Wall -Wextra -O2 -g client.c -o build/client
+	$(CC) $(CFLAGS) server.cpp -o build/server
+	$(CC) $(CFLAGS) client.cpp -o build/client
 
 clean:
 	rm -r build
