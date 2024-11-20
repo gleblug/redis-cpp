@@ -1,0 +1,6 @@
+	# https://clang-format-configurator.site/
+---
+IndentWidth: 4
+BraceWrapping: {}
+BreakBeforeBraces: Attach
+AlwaysBreakTemplateDeclarations: Yes

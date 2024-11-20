@@ -1,14 +1,18 @@
 СС=g++
-CFLAGS=-Wall -Wextra -O2 -g
+CFLAGS=-Wall -Wextra -O2
+BUILD=bin
+SOURCE=src
 
-all: dirs program
+all: server client
 
 dirs:
-	mkdir -p build
+	mkdir -p $(BUILD)
 
-program:
-	$(CC) $(CFLAGS) server.cpp -o build/server
-	$(CC) $(CFLAGS) client.cpp -o build/client
+server: dirs
+	$(CC) $(CFLAGS) $(SOURCE)/server.cpp -o $(BUILD)/server	
+
+client: dirs
+	$(CC) $(CFLAGS) $(SOURCE)/client.cpp -o $(BUILD)/client
 
 clean:
-	rm -r build
+	rm -r $(BUILD)
